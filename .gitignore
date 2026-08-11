@@ -1,1 +1,6 @@
 docs/*.pdf
+
+# Go build and test artifacts
+/bin/
+*.test
+coverage.out
