@@ -7,6 +7,14 @@ The project starts deliberately small. Each concept from the book can be added a
 ## Requirements
 
 - Go 1.23 or newer
+- Docker, for the recommended development environment
+- VS Code with the Dev Containers extension, when using the dev container
+
+## Development container
+
+Open the repository in VS Code and choose **Reopen in Container**. The container installs the Go toolchain and runs the test suite after it is created.
+
+At this stage, the whole stack is the Go command itself; no external services are required yet.
 
 ## Run
 
@@ -23,8 +31,9 @@ go test ./...
 ## Layout
 
 ```text
-cmd/learn-db-internals/  Command-line entry point
- docs/                    Book and study material
+.devcontainer/             Development container definition
+cmd/learn-db-internals/    Command-line entry point
+docs/                       Book and study material
 ```
 
 No database engine is implemented yet; this is just the initial project scaffold.
