@@ -1,3 +1,3 @@
 module github.com/ngdangdat/learn-db-internals
 
-go 1.23
+go 1.26
