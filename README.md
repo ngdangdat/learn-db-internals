@@ -6,7 +6,7 @@ The project starts deliberately small. Each concept from the book can be added a
 
 ## Requirements
 
-- Go 1.23 or newer
+- Go 1.26 or newer
 - Docker, for the recommended development environment
 - VS Code with the Dev Containers extension, when using the dev container
 
