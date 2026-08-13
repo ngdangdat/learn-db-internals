@@ -14,7 +14,7 @@ The first experiment is a durable in-memory key/value store. It writes mutations
 
 ## Development container
 
-Open the repository in VS Code and choose **Reopen in Container**. The container installs the Go toolchain and runs the test suite after it is created.
+Open the repository in VS Code and choose **Reopen in Container**. The container installs the Go toolchain, configures Zsh with Oh My Zsh as the default terminal, and runs the test suite after it is created. The `gst` helper runs `git status`.
 
 At this stage, the whole stack is the Go command itself; no external services are required yet.
 

@@ -4,6 +4,14 @@
     "dockerfile": "Dockerfile",
     "context": ".."
   },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true
+    }
+  },
   "remoteUser": "vscode",
   "postCreateCommand": "go test ./...",
   "customizations": {
@@ -13,7 +21,8 @@
       ],
       "settings": {
         "go.toolsManagement.autoUpdate": true,
-        "go.useLanguageServer": true
+        "go.useLanguageServer": true,
+        "terminal.integrated.defaultProfile.linux": "zsh"
       }
     }
   }
