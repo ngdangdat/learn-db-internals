@@ -4,6 +4,8 @@ A small Go playground for working through [*Database Internals*](docs/database_i
 
 The project starts deliberately small. Each concept from the book can be added as a focused package with tests as we reach it.
 
+The first experiment is a durable in-memory key/value store. It writes mutations to a synced write-ahead log, can checkpoint the current state to a snapshot, and recovers by loading the snapshot and replaying the remaining log.
+
 ## Requirements
 
 - Go 1.23 or newer
@@ -34,6 +36,7 @@ go test ./...
 .devcontainer/             Development container definition
 cmd/learn-db-internals/    Command-line entry point
 docs/                       Book and study material
+store/                      Durable in-memory store experiment
 ```
 
-No database engine is implemented yet; this is just the initial project scaffold.
+The store is intentionally a learning implementation, not a production database. It currently uses synchronous writes and explicit checkpoints; asynchronous batching, sorted on-disk indexes, checksums, and transactions are deferred.
