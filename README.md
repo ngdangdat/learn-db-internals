@@ -8,7 +8,7 @@ The first experiment is a durable in-memory key/value store. It writes mutations
 
 ## Requirements
 
-- Go 1.23 or newer
+- Go 1.26 or newer
 - Docker, for the recommended development environment
 - VS Code with the Dev Containers extension, when using the dev container
 
