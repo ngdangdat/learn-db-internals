@@ -8,6 +8,8 @@ The first experiment is a durable in-memory key/value store. It writes mutations
 
 The second experiment is an in-memory row store with a fixed schema. Its secondary indexes store primary keys, so a secondary lookup resolves through the primary index before reading the row. This models the primary-index indirection tradeoff described in the book.
 
+The third experiment is an in-memory B-Tree with configurable minimum degree. It supports point reads, inserts and replacements, deletion with rebalancing, and lexicographic half-open range scans. It deliberately excludes persistence, page layout, and recovery so the tree algorithms remain the focus.
+
 ## Requirements
 
 - Go 1.26 or newer
@@ -38,6 +40,7 @@ go test ./...
 .devcontainer/             Development container definition
 cmd/learn-db-internals/    Command-line entry point
 docs/                       Book and study material
+btree/                      In-memory ordered B-Tree experiment
 rowstore/                   In-memory row store with primary-key indirection
 store/                      Durable in-memory store experiment
 ```
