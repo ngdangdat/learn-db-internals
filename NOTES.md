@@ -48,6 +48,12 @@
   - Index-organized table: records are stored in key order in the index itself, allowing sequential range scans and avoiding a separate data-file lookup.
 - Updates and deletes are often represented by newer records or tombstones; garbage collection later reclaims space occupied by shadowed records.
 
+### B-Trees
+- A B-Tree keeps keys sorted in every node and uses wide, shallow nodes to reduce disk-page I/O in a disk-backed design.
+- This project's `btree` experiment is in memory only. Its configurable minimum degree `t` gives each non-root node between `t-1` and `2t-1` keys; splitting a full node promotes its median key.
+- Inserts split full nodes before descending. Deletion keeps a child at least `t` keys wide before descending by borrowing from a sibling or merging siblings, then contracts an empty internal root.
+- Keys are strings and values are copied on input and output. `Range(start, end)` returns lexicographically ordered keys in the half-open interval `[start, end)`; an empty bound is unbounded.
+
 ### Index files
 - An index maps search keys to record locations in a data file, or to primary keys/records in an index-organized table.
 - A primary index is built on the primary data file and commonly on its primary key.
